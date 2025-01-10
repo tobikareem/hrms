@@ -1,0 +1,13 @@
+<div class="project-details">
+  <h3>Project Details</h3>
+  <div *ngIf="project$ | async as project">
+    <span>Project Name: {{ project.name }}</span>
+    <span>Project Description: {{ project.description }}</span>
+    <span>Logo: </span> 
+    <img [ngSrc]="project.image" width="100" height="100" alt="profilePic" loading="eager" sizes="100vw,50vw"/> 
+    <div class="subprojects">
+      <span>Subprojects:</span>
+      <app-project-card *ngFor="let subProjectId of project.subProjectIds"[projectId]="subProjectId"/>
+    </div>
+  </div>
+</div>

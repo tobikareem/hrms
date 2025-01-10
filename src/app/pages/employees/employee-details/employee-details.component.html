@@ -1,0 +1,17 @@
+<h2>Employee Details</h2>
+<div>
+  
+  <img [ngSrc]="employee.profilePicture" width="20" height="20" alt="profilePic" priority/> 
+  
+  <label for="firstName" [ngClass]="canChange ? 'change': ''">First Name: </label>
+  <input id="firstName" type="text" [value]="employee.firstName" readonly>
+  
+  <label for="lastName">Last Name: </label>
+  <input id="lastName" type="text" [value]="employee.lastName" readonly>
+  
+  <label for="position">Position: </label>
+  <input id="position" type="text" [value]="employee.position" appTruncate readonly>
+
+  <p [ngClass]="canChange ? 'change': ''">Employee</p>
+  <button (click)="toggleCanChange()">Edit</button>
+</div>
